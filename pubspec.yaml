@@ -8,6 +8,10 @@ environment:
 dependencies: 
   cupertino_icons: ^1.0.2
   get: 4.1.4
+  http: 0.13.3
+  dropdown_search: 0.6.3
+  flutter_launcher_icons: "^0.9.1"
+  
   flutter: 
     sdk: flutter
 
