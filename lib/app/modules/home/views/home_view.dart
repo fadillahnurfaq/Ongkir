@@ -23,19 +23,15 @@ class HomeView extends GetView<HomeController> {
           children: [
             dropProvinsi(type: "asal"),
             Obx(
-              () => controller.hiddenKotaAsal.isTrue
-                  ? SizedBox()
-                  : dropKota(
-                      provId: controller.provAsalId.value,
-                      type: "asal",
-                    ),
+              () => dropKota(
+                provId: controller.provAsalId.value,
+                type: "asal",
+              ),
             ),
             dropProvinsi(type: "tujuan"),
             Obx(
-              () => controller.hiddenKotaTujuan.isTrue
-                  ? SizedBox()
-                  : dropKota(
-                      provId: controller.provTujuanId.value, type: "tujuan"),
+              () => dropKota(
+                  provId: controller.provTujuanId.value, type: "tujuan"),
             ),
             BeratBarang(),
             Padding(
@@ -78,15 +74,13 @@ class HomeView extends GetView<HomeController> {
               ),
             ),
             Obx(
-              () => controller.hiddenButton.isTrue
-                  ? SizedBox()
-                  : ElevatedButton(
-                      onPressed: () => controller.ongkosKirim(),
-                      child: Text("CEK ONGKOS KIRIM"),
-                      style: ElevatedButton.styleFrom(
-                          padding: EdgeInsets.symmetric(vertical: 20),
-                          primary: Colors.red[900]),
-                    ),
+              () => ElevatedButton(
+                onPressed: () => controller.ongkosKirim(),
+                child: Text("CEK ONGKOS KIRIM"),
+                style: ElevatedButton.styleFrom(
+                    padding: EdgeInsets.symmetric(vertical: 20),
+                    primary: Colors.red[900]),
+              ),
             )
           ],
         ),
