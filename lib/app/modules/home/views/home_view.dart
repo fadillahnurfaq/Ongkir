@@ -74,13 +74,28 @@ class HomeView extends GetView<HomeController> {
               ),
             ),
             Obx(
-              () => ElevatedButton(
-                onPressed: () => controller.ongkosKirim(),
-                child: Text("CEK ONGKOS KIRIM"),
-                style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.symmetric(vertical: 20),
-                    primary: Colors.red[900]),
-              ),
+              () => controller.hiddenButton.isTrue
+                  ? ElevatedButton(
+                      onPressed: () {
+                        Get.snackbar(
+                          'Alert!',
+                          'Silahkan isi terlebih dahulu',
+                          backgroundColor: Colors.red[900],
+                          colorText: Colors.white,
+                        );
+                      },
+                      child: Text("CEK ONGKOS KIRIM"),
+                      style: ElevatedButton.styleFrom(
+                          padding: EdgeInsets.symmetric(vertical: 20),
+                          primary: Colors.red[900]),
+                    )
+                  : ElevatedButton(
+                      onPressed: () => controller.ongkosKirim(),
+                      child: Text("CEK ONGKOS KIRIM"),
+                      style: ElevatedButton.styleFrom(
+                          padding: EdgeInsets.symmetric(vertical: 20),
+                          primary: Colors.red[900]),
+                    ),
             )
           ],
         ),

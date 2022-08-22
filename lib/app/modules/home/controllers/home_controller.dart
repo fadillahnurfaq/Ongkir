@@ -61,7 +61,7 @@ class HomeController extends GetxController {
       print(err);
       Get.defaultDialog(
         title: "Terjadi kesalahan",
-        middleText: err.toString(),
+        middleText: "Tidak tersedia",
       );
     }
   }
